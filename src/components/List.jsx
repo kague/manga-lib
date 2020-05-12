@@ -88,8 +88,11 @@ function List() {
   }
 
   function handleDelete(id) {
-    const allMangas = mangas.filter((manga) => manga.id !== id);
-    setMangas(allMangas);
+    const result = window.confirm(`Voulez vous supprimer le manga ${id}`);
+    if (result) {
+      const allMangas = mangas.filter((manga) => manga.id !== id);
+      setMangas(allMangas);
+    }
   }
 
   return (
