@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ListManga from './ListManga';
+import MangaForm from './MangaForm';
 
 const mangaList = [
     {
@@ -50,6 +51,8 @@ const mangaList = [
 ];
 
 function List(){
+    const [mangaId, setMangaId] = useState();
+    const [mangas, setMangas] = useState(mangaList);
 
 function handleStatusChange(id){
     console.log(id);
@@ -60,13 +63,24 @@ function handleStatusChange(id){
     setMangas(newMangas);
 }
 
-    const [mangaId, setMangaId] = useState();
-    const [mangas, setMangas] = useState(mangaList);
+function handleMangaCreation(titre, nombrePos){
+    const newManga = {
+        id: Date.now(),
+        titre,
+        nombrePos,
+        aChercher: true
+    };
+    const allMangas = [newManga,...mangas];
+    setMangas(allMangas);
+}
+
     return (
         <>
             <h1>Liste</h1>
             <div>id : {mangaId}</div>
-            <ListManga lst={mangaList} handleStatusChange={handleStatusChange}/>
+            <MangaForm handleMangaCreation={handleMangaCreation}/>
+            <br/>
+            <ListManga lst={mangas} handleStatusChange={handleStatusChange}/>
         </>
     );
 }
