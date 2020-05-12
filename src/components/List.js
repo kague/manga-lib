@@ -10,7 +10,8 @@ const mangaList = [
         nombrePos: "",
         nombreTot: "",
         fini: false,
-        statut: "AC"
+        statut: "AC",
+        aChercher: true,
     },
     {
         id:2,
@@ -20,7 +21,8 @@ const mangaList = [
         nombrePos: "35",
         nombreTot: "37",
         fini: false,
-        statut: "AL"
+        statut: "AL",
+        aChercher: true,
     },
     {
         id:3,
@@ -30,7 +32,8 @@ const mangaList = [
         nombrePos: "3",
         nombreTot: "10",
         fini: true,
-        statut: "SF"
+        statut: "SF",
+        aChercher: true,
     },
     {
         id:4,
@@ -40,7 +43,8 @@ const mangaList = [
         nombrePos: "13",
         nombreTot: "13",
         fini: true,
-        statut: "F"
+        statut: "F",
+        aChercher: false,
     },
 
 ];
@@ -50,6 +54,10 @@ function List(){
 function handleStatusChange(id){
     console.log(id);
     setMangaId(id);
+    const mangaToModify = mangas.find(manga => manga.id === id);
+    mangaToModify.aChercher = !mangaToModify.aChercher;
+    const newMangas = mangas.map( manga => (manga.id !== id ? manga : mangaToModify));
+    setMangas(newMangas);
 }
 
     const [mangaId, setMangaId] = useState();
