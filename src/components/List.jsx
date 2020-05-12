@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ListManga from './ListManga';
 import MangaForm from './MangaForm';
 
@@ -49,12 +49,24 @@ const mangaList = [
   },
 ];
 
+const keyStorage = 'react.mangas';
+
 function List() {
   const [mangaId, setMangaId] = useState();
   const [mangas, setMangas] = useState(mangaList);
 
+  useEffect(() => {
+    const mangasFromStorage = localStorage.getItem(keyStorage);
+    if (mangasFromStorage) {
+      setMangas(JSON.parse(mangasFromStorage));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(keyStorage, JSON.stringify(mangas));
+  }, [mangas]);
+
   function handleStatusChange(id) {
-    console.log(id);
     setMangaId(id);
     const mangaToModify = mangas.find((manga) => manga.id === id);
     mangaToModify.aChercher = !mangaToModify.aChercher;
