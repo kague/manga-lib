@@ -2,6 +2,10 @@
 
 ## Available Scripts
 
+### `npm install`
+
+Initialisation du projet
+
 ### `yarn start`
 
 Runs development mode.<br />
