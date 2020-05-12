@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ListManga from './ListManga';
 
 const mangaList = [
@@ -45,15 +45,19 @@ const mangaList = [
 
 ];
 
+function List(){
 
 function handleStatusChange(id){
     console.log(id);
+    setMangaId(id);
 }
 
-function List(){
+    const [mangaId, setMangaId] = useState();
+    const [mangas, setMangas] = useState(mangaList);
     return (
         <>
             <h1>Liste</h1>
+            <div>id : {mangaId}</div>
             <ListManga lst={mangaList} handleStatusChange={handleStatusChange}/>
         </>
     );
