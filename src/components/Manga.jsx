@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function Manga(props) {
-  const manga = props.data;
+  const { data: manga, handleDelete } = props;
   return (
     <>
       <input
@@ -12,6 +12,7 @@ export default function Manga(props) {
       <li key={manga.id}>
         {manga.titre} {manga.fini ? 'F' : 'EC'}
       </li>
+      <button onClick={() => handleDelete(manga.id)}>x</button>
     </>
   );
 }

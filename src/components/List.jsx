@@ -87,13 +87,22 @@ function List() {
     setMangas(allMangas);
   }
 
+  function handleDelete(id) {
+    const allMangas = mangas.filter((manga) => manga.id !== id);
+    setMangas(allMangas);
+  }
+
   return (
     <>
       <h1>Liste</h1>
       <div>id :{mangaId}</div>
       <MangaForm handleMangaCreation={handleMangaCreation} />
       <br />
-      <ListManga lst={mangas} handleStatusChange={handleStatusChange} />
+      <ListManga
+        lst={mangas}
+        handleStatusChange={handleStatusChange}
+        handleDelete={handleDelete}
+      />
     </>
   );
 }

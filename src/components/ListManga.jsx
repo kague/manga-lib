@@ -2,15 +2,15 @@ import React from 'react';
 import Manga from './Manga';
 
 function ListManga(props) {
-  console.log('props', props);
-
+  const { handleStatusChange, handleDelete } = props;
   return (
     <ul>
       {props.lst.map((manga) => (
         <Manga
           key={manga.id}
           data={manga}
-          handleStatusChange={props.handleStatusChange}
+          handleStatusChange={handleStatusChange}
+          handleDelete={handleDelete}
         />
       ))}
     </ul>
