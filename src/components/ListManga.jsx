@@ -1,19 +1,25 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import List from '@material-ui/core/List';
 import Manga from './Manga';
 
-function ListManga(props) {
-  const { handleStatusChange, handleDelete } = props;
+const useStyles = makeStyles(() => ({
+  root: {
+    width: '100%',
+  },
+}));
+
+function ListManga({ lst }) {
+  const classes = useStyles();
+
   return (
-    <ul>
-      {props.lst.map((manga) => (
-        <Manga
-          key={manga.id}
-          data={manga}
-          handleStatusChange={handleStatusChange}
-          handleDelete={handleDelete}
-        />
-      ))}
-    </ul>
+    <>
+      <List dense className={classes.root}>
+        {lst.map((manga) => (
+          <Manga key={manga.id} data={manga} />
+        ))}
+      </List>
+    </>
   );
 }
 
