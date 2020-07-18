@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "276056862849a068de125c5ac600b699",
+    "revision": "76d9b8f2b29bc65afd5f70c9e21fa842",
     "url": "/manga-lib/index.html"
   },
   {
-    "revision": "d3d76f6a28631baa5458",
+    "revision": "66814fbe514a0c66fe94",
     "url": "/manga-lib/static/css/main.5f361e03.chunk.css"
   },
   {
-    "revision": "43716e1bfc8388d984fd",
-    "url": "/manga-lib/static/js/2.e31b6823.chunk.js"
+    "revision": "72f3f0ca44b1f2101f11",
+    "url": "/manga-lib/static/js/2.31b4ae8c.chunk.js"
   },
   {
-    "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/manga-lib/static/js/2.e31b6823.chunk.js.LICENSE.txt"
+    "revision": "0749163b59fbee32225059cb60c18af6",
+    "url": "/manga-lib/static/js/2.31b4ae8c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d3d76f6a28631baa5458",
-    "url": "/manga-lib/static/js/main.cfc88c59.chunk.js"
+    "revision": "66814fbe514a0c66fe94",
+    "url": "/manga-lib/static/js/main.60a4ff2f.chunk.js"
   },
   {
     "revision": "2b6febd943a0d7cff84e",
